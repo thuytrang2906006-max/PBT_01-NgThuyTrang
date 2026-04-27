@@ -58,6 +58,20 @@ Câu A4:
    - Khó thiết kế, phức tạp, sửa layout khó
    - Không responsive (không phù hợp mobile)
 Tài liệu tham chiếu: tuan_1_html5/05_tables_hyperlinks.md
+Phần B - Thực hành
+Bài 3: Debug
+    - Lỗi 1: Dòng 1 - sai chuẩn - <!DOCTYPE html>
+    - Lỗi 2: Dòng 4 - thiếu đóng thẻ </title> - thêm </title>
+    - Lỗi 3: Dòng 5 - sai charset="utf8" - sửa charset="utf-8"
+    - Lỗi 4: Dòng 8 - đóng thẻ sai - <h1>Welcome to ShopTLU<\h1>
+    - Lỗi 5: Dòng 12 - đóng thẻ sai -  <a href="home">Trang chủ<\a>
+    - Lỗi 6: Dòng 10 - src thiếu "" - <img src="iphone.jpg">
+    - Lỗi 7: Dòng 20 - thiếu thuộc tính alt ảnh - <img src="iphone.jpg" alt="iPhone 16 Pro">
+    - Lỗi 8: Dòng 22 - lồng thẻ <b><\b> sai thứ tự - <p>Giá: <b>25.990.000đ</b></p>
+    - Lỗi 9: Dòng 40 - dùng 2 thẻ main - dùng <aside>
+    - Lỗi 10: Dòng 45 - đóng thẻ thiếu -  <p>Copyright 2026<\p>
+
+
 PHẦN C — SUY LUẬN
 Câu C1:
 Câu C2:
