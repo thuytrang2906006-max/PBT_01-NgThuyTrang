@@ -1,0 +1,106 @@
+* { box-sizing: border-box;
+     margin: 0;
+    padding: 0; }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #1e293b;
+    line-height: 1.7;
+}
+header {
+    background: linear-gradient(to right, #2563eb, #1e3a8a);
+    padding: 20px;
+}
+nav {
+    display: flex;
+    gap: 20px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav a:hover {
+    color: #facc15;
+    text-decoration: underline;
+}
+nav a.active {
+    color: #facc15;
+    border-bottom: 2px solid #facc15;
+}
+/* id selector */
+#about {
+    padding: 30px;
+}
+
+#about h1 {
+    margin-bottom: 20px;
+}
+
+/* descendant selector */
+#about p {
+    text-align: justify;
+}
+
+figure img {
+    border-radius: 12px;
+}
+
+
+#skill {
+    padding: 30px;
+}
+
+table {
+    width: 500px;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th,
+td {
+    border: 1px solid #cbd5e1;
+    padding: 10px;
+    text-align: center;
+}
+
+/* element selector */
+th {
+    background-color: #1e293b;
+    color: white;
+}
+
+/* pseudo-class selector */
+tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+/* pseudo-class selector */
+tbody tr:hover {
+    background-color: #dbeafe;
+}
+
+/* ===== CONTACT ===== */
+
+#contact {
+    padding: 30px;
+}
+
+#contact a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 18px;
+    margin-top: 20px;
+}
