@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+/* =====================
+   MAIN GRID LAYOUT
+===================== */
+
+.layout {
+    display: grid;
+
+    grid-template-columns: 200px minmax(500px, 1fr) 200px;
+
+    grid-template-areas:
+        "header header header"
+        "hero hero hero"
+        "sidebar main ads"
+        "footer footer footer";
+
+    gap: 20px;
+    padding: 20px;
+}
+
+/* =====================
+   HEADER
+===================== */
+
+.header {
+    grid-area: header;
+
+    background: #1e293b;
+    color: white;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+/* span full width */
+.header {
+    grid-column: 1 / -1;
+}
+
+/* =====================
+   HERO
+===================== */
+
+.hero {
+    grid-area: hero;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    gap: 20px;
+
+    background: #2563eb;
+    color: white;
+
+    padding: 30px;
+    border-radius: 10px;
+
+    grid-column: 1 / -1;
+}
+
+.hero-text {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Bonus: nổi bật span 2 cột */
+.featured-product {
+    background: white;
+    color: black;
+
+    padding: 20px;
+    border-radius: 10px;
+
+    grid-column: span 2;
+}
+
+/* =====================
+   SIDEBAR
+===================== */
+
+.sidebar {
+    grid-area: sidebar;
+
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sidebar label {
+    display: block;
+    margin: 12px 0;
+}
+
+/* =====================
+   MAIN CONTENT
+===================== */
+
+.main-content {
+    grid-area: main;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    padding: 15px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-card h4 {
+    margin-top: 10px;
+}
+
+.product-card p {
+    margin-top: 5px;
+}
+
+/* =====================
+   ADS
+===================== */
+
+.ads {
+    grid-area: ads;
+
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.ads img {
+    width: 100%;
+}
+
+/* =====================
+   FOOTER
+===================== */
+
+.footer {
+    grid-area: footer;
+
+    background: #1e293b;
+    color: white;
+
+    text-align: center;
+    padding: 20px;
+
+    grid-column: 1 / -1;
+}

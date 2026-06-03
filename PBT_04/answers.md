@@ -58,5 +58,4 @@ Khi nào absolute tham chiếu parent?
 ├─────┼─────┼─────┤
 │  7  │     │     │
 └─────┴─────┴─────┘
-## Phần B - Thực hành
-### Bài B1 
+## Phần C
