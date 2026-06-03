@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Demo</title>
+    <link rel="stylesheet" href="positioning.css">
+</head>
+<body>
+
+    <!-- Fixed Header -->
+    <header class="header">
+        <div class="logo">MyShop</div>
+
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <!-- Sticky Sidebar -->
+        <aside class="sidebar">
+            <h3>Danh mục</h3>
+            <ul>
+                <li>Áo</li>
+                <li>Quần</li>
+                <li>Giày</li>
+                <li>Túi xách</li>
+                <li>Phụ kiện</li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+
+            <div class="product-card">
+                <span class="badge">HOT</span>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.a9Uoz_mcrcVW1zSEwlE48wHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Product">
+                <h3>Áo Thun Nam</h3>
+                <p>Giá: 199.000đ</p>
+            </div>
+
+            <div class="product-card">
+                <span class="badge">HOT</span>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.a9Uoz_mcrcVW1zSEwlE48wHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Product">
+                <h3>Giày Sneaker</h3>
+                <p>Giá: 599.000đ</p>
+            </div>
+
+            <div class="product-card">
+                <span class="badge">HOT</span>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.a9Uoz_mcrcVW1zSEwlE48wHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Product">
+                <h3>Túi Xách</h3>
+                <p>Giá: 299.000đ</p>
+            </div>
+
+            <!-- Tạo chiều dài để test scroll -->
+            <div class="dummy-content">
+                <p>Scroll xuống để kiểm tra Fixed Header và Sticky Sidebar.</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+                <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Scroll To Top Button -->
+    <button class="scroll-top">↑</button>
+
+</body>
+</html>
