@@ -259,3 +259,27 @@ Phần 2:
  Vì: Rule #demo.text.highlight có specificity cao nhất là (1,2,0), nên thắng tất cả các rule còn lại.
 
 PHẦN C — DEBUG & SUY LUẬN
+## Bài C1: 
+ 1: Tính chiều rộng thực tế
+    Sidebar
+    - width: 300px
+    - padding: 20px + 20px = 40px
+    - border: 1px + 1px = 2px
+   => Chiều rộng thực tế = 342px
+   Content
+    - width: 660px
+    - padding: 30px + 30px = 60px
+    - border: 1px + 1px = 2px
+   => Chiều rộng thực tế = 722px
+   Tổng: 342 + 722 = 1064px
+   Container chỉ có: 960px
+ 2: Layout vỡ
+    Vì CSS đang dùng content-box (mặc định). width chỉ tính phần content, còn padding và border được cộng thêm vào chiều rộng thực tế
+    Do đó:
+
+idebar = 342px
+Content = 722px
+
+Tổng = 1064px
+
+Lớn hơn container 960px nên trình duyệt không đủ chỗ đặt hai phần tử cạnh nhau, khiến .content bị đẩy xuống dòng.
