@@ -1,0 +1,49 @@
+/* 1. Element */
+p {
+    color: black;
+} /* 0,0,1 */
+
+/* 2. Element + pseudo-class */
+p:hover {
+    color: brown;
+} /* 0,1,1 */
+
+/* 3. Class */
+.text {
+    color: blue;
+} /* 0,1,0 */
+
+/* 4. Class */
+.highlight {
+    color: green;
+} /* 0,1,0 */
+
+/* 5. Two classes */
+.text.highlight {
+    color: orange;
+} /* 0,2,0 */
+
+/* 6. Attribute */
+[id="demo"] {
+    color: purple;
+} /* 0,1,0 */
+
+/* 7. Element + class */
+p.text {
+    color: pink;
+} /* 0,1,1 */
+
+/* 8. Element + two classes */
+p.text.highlight {
+    color: gray;
+} /* 0,2,1 */
+
+/* 9. ID */
+#demo {
+    color: red;
+} /* 1,0,0 */
+
+/* 10. ID + classes */
+#demo.text.highlight {
+    color: gold;
+} /* 1,2,0 */

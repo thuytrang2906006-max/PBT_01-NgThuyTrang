@@ -200,7 +200,7 @@ Class selectors
 Tag selectors
 Tài liệu tham chiếu:tuan_2_css_core/10_inheritance_cascading.md
 PHẦN B — THỰC HÀNH CODE
-Bài B1 — Style trang Profile
+## Bài B1 — Style trang Profile
 # Các loại selector đã sử dụng
 1. Element selector
 - body
@@ -221,4 +221,41 @@ Bài B1 — Style trang Profile
 - nav a:hover
 - tbody tr:nth-child(even)
 - tbody tr:hover
+## Bài B2: 
+Phần 1
+  Hộp 1 (content-box): chiều rộng thực tế = 350px
+  Hộp 2 (border-box): chiều rộng thực tế = 300px
+Giải thích sự khác biệt:
+
+- Với `box-sizing: content-box` (mặc định), thuộc tính `width: 300px` chỉ tính cho phần content.
+  - Content = 300px
+  - Padding trái + phải = 20px + 20px = 40px
+  - Border trái + phải = 5px + 5px = 10px
+  - Chiều rộng thực tế = 300 + 40 + 10 = 350px
+
+- Với `box-sizing: border-box`, giá trị `width: 300px` đã bao gồm cả content, padding và border.
+  - Chiều rộng thực tế vẫn là 300px.
+  - Phần content sẽ tự thu nhỏ để chừa chỗ cho padding và border.
+  - Content thực tế = 300 - 40 - 10 = 250px
+Phần 2:
+    Không dùng border-box: Sidebar = 250 + 15 + 15 = 280px, Content = 500 + 20 + 20 = 540px, Ads = 250 + 15 + 15 = 280px
+      Tổng = 1100px > 1000px
+    Dùng border-box: Sidebar = 250px, Content = 500px, Ads = 250px
+      Tổng = 1000px
+=> border-box giúp tổng chiều rộng đúng bằng kích thước container.
+## Bài 3:
+1: Danh sách 10 rules và specificity
+   - p (0,0,1)
+   - p (0,1,1)
+   - .text	(0,1,0)
+   - .highlight	(0,1,0)
+   - .text.highlight	(0,2,0)
+   - [id="demo"]	(0,1,0)
+   - p.text	(0,1,1)
+   - p.text.highlight	(0,2,1)
+   - #demo	(1,0,0)
+   - #demo.text.highlight	(1,2,0)
+2: Element cuối hình hiển thị màu vàng (gold)
+ Vì: Rule #demo.text.highlight có specificity cao nhất là (1,2,0), nên thắng tất cả các rule còn lại.
+
 PHẦN C — DEBUG & SUY LUẬN

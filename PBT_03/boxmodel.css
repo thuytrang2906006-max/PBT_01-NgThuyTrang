@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* =====================
+   PHẦN 1
+===================== */
+
+.box-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.box {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.content-box {
+    box-sizing: content-box;
+    background-color: #fca5a5;
+}
+
+.border-box {
+    box-sizing: border-box;
+    background-color: #86efac;
+}
+
+/* =====================
+   PHẦN 2
+===================== */
+
+.container {
+    width: 1000px;
+    border: 3px solid black;
+    margin-bottom: 40px;
+    display: flex;
+}
+
+.sidebar,
+.ads {
+    width: 250px;
+    padding: 15px;
+    background-color: #dbeafe;
+}
+
+.content {
+    width: 500px;
+    padding: 20px;
+    background-color: #fef3c7;
+}
+
+/* Chỉ trường hợp dùng border-box */
+
+.borderbox .sidebar,
+.borderbox .content,
+.borderbox .ads {
+    box-sizing: border-box;
+}
