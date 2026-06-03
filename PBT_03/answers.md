@@ -274,12 +274,44 @@ PHẦN C — DEBUG & SUY LUẬN
    Tổng: 342 + 722 = 1064px
    Container chỉ có: 960px
  2: Layout vỡ
-    Vì CSS đang dùng content-box (mặc định). width chỉ tính phần content, còn padding và border được cộng thêm vào chiều rộng thực tế
-    Do đó:
-
-idebar = 342px
-Content = 722px
-
-Tổng = 1064px
-
-Lớn hơn container 960px nên trình duyệt không đủ chỗ đặt hai phần tử cạnh nhau, khiến .content bị đẩy xuống dòng.
+    Container chỉ rộng 960px nhưng tổng chiều rộng thực tế của sidebar và content là 1064px.
+    Do CSS mặc định dùng content-box nên padding và border được cộng thêm vào width.
+3. Hai cách sửa
+Cách 1: Dùng border-box
+  Thêm: box-sizing: border-box; cho sidebar và content.
+  Khi đó:
+      Sidebar = 300px
+      Content = 660px
+  Tổng = 960px.
+Cách 2: Không dùng border-box
+  Giảm width:
+      Sidebar: 258px
+      Content: 598px
+  Khi cộng thêm padding và border:
+      Sidebar = 300px thực tế
+      Content = 660px thực tế
+  Tổng = 960px
+4: Chứng minh
+ - Sử dụng border-box là cách phổ biến và dễ bảo trì hơn vì không cần tự tính lại width mỗi khi thay đổi padding hoặc border.
+## Câu C2:
+1: "Sản phẩm A" (h2) có font-size = 20px và color = green
+    Về size:
+     .container { font-size: 14px } kế thừa xuống
+    .card .title { font-size: 20px } áp dụng trực tiếp cho h2 nên ghi đè 14px.
+    Về màu:
+    - Do !important thắng mọi rule thường nên: green !important thắng red
+2: "Mô tả sản phẩm" (p trong card featured) có color = blue
+   .card p {
+    color: inherit;
+    }
+    do có inherit lấy màu của phẩn tử cha (<div class="card" id="featured"> và .card {color: blue;})  nên p có màu xanh dương
+3: "Sản phẩm B" (h2) có font-size = 20px và color = blue
+    font:
+    .card .title {
+    font-size: 20px;
+    }
+    màu: Không có #featured .title
+         Không có .highlight
+      nên h2 kế thừa từ .card {color: blue;} có màu xanh dương
+4: "Mô tả sản phẩm B" (p.highlight) có color = green
+    có 2 rule  .card p {color: inherit;} và .highlight {color: green!important;} vì !importan thắng nên có màu xanh lá

@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 960px;
+    margin: 20px auto;
+    border: 2px solid black;
+}
+
+.clear {
+    clear: both;
+}
+
+/* =====================
+   CÁCH 1: BORDER-BOX
+===================== */
+
+.fix-borderbox .sidebar {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    float: left;
+    background: #dbeafe;
+}
+
+.fix-borderbox .content {
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    float: left;
+    background: #fef3c7;
+}
+
+/* =====================
+   CÁCH 2: GIẢM WIDTH
+===================== */
+
+.fix-width .sidebar {
+    width: 258px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background: #dbeafe;
+}
+
+.fix-width .content {
+    width: 598px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background: #fef3c7;
+}
