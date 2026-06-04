@@ -1,0 +1,148 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* =============== 1. CARD HOVER EFFECT =============== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;           /* Yêu cầu 1 */
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* =============== 3. IMAGE ZOOM =============== */
+.card-image {
+    overflow: hidden;
+    height: 220px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .card-image img {
+    transform: scale(1.1);               /* Yêu cầu 3 */
+}
+
+/* =============== 2. BUTTON HOVER =============== */
+.btn-buy {
+    width: 100%;
+    padding: 12px 20px;
+    background: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;           /* Yêu cầu 2 */
+    margin-top: 15px;
+}
+
+.btn-buy:hover {
+    background: #6d28d9;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* =============== 4. LOADING SPINNER =============== */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid #e5e7eb;
+    border-top: 5px solid #7c3aed;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;   /* Yêu cầu 4 */
+    margin: 40px auto;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* =============== 5. FADE-IN KHI SCROLL =============== */
+.fade-box {
+    background: white;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =============== HEADER & SECTION =============== */
+header {
+    background: #7c3aed;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    color: #4f46e5;
+    margin: 40px 0 20px;
+    text-align: center;
+}
+
+.demo-section {
+    text-align: center;
+    margin: 60px 0;
+}

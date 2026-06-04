@@ -172,3 +172,6 @@ Tại sao trình duyệt KHÔNG đọc được file .scss?
   - Vì: SCSS là ngôn ngữ tiền xử lý (preprocessor), không phải CSS chuẩn.
 Cần bước gì để chuyển SCSS → CSS?
   - Phải biên dịch (compile) file .scss thành file .css trước khi trình duyệt sử dụng.
+## Phần B
+### Câu B3:
+Lệnh biên dịch SCSS:  npx sass scss/style.scss css/style.css --watch

@@ -1,0 +1,29 @@
+/* 
+    MIXINS 
+    NgThuyTrang
+*/
+@use 'variables' as *;
+@mixin flex-giua {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin card-style {
+    background: $mau-trang;
+    border-radius: $bo-goc;
+    box-shadow: $shadow-vua;
+    overflow: hidden;
+}
+
+@mixin responsive($man-hinh) {
+    @if $man-hinh == tablet {
+        @media (min-width: $tablet) {
+            @content;
+        }
+    } @else if $man-hinh == desktop {
+        @media (min-width: $desktop) {
+            @content;
+        }
+    }
+}

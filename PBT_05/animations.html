@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2 - CSS Animations | NgThuyTrang</title>
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Bài B2 - Transitions &amp; Animations</h1>
+            <p>Made by NgThuyTrang</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Product Cards -->
+        <section class="products">
+            <h2>Sản phẩm nổi bật</h2>
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <!-- Loading Spinner Demo -->
+        <section class="demo-section">
+            <h2>Loading Spinner</h2>
+            <div class="spinner"></div>
+        </section>
+
+        <!-- Fade In Demo -->
+        <section class="demo-section fade-section">
+            <h2>Fade-in khi scroll (CSS + JS trigger)</h2>
+            <div class="fade-box">Phần tử này sẽ fade in khi scroll đến</div>
+            <div class="fade-box">Phần tử thứ hai fade in</div>
+            <div class="fade-box">Phần tử thứ ba fade in</div>
+        </section>
+    </main>
+
+    <script>
+        // Render Product Cards
+        const products = [
+            {name: "iPhone 16 Pro", price: "32.990.000"},
+            {name: "MacBook Air M3", price: "29.990.000"},
+            {name: "AirPods Pro 2", price: "6.290.000"},
+            {name: "Samsung Galaxy S25", price: "24.500.000"}
+        ];
+
+        const grid = document.getElementById('productGrid');
+        
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <div class="card-image">
+                    <img src="https://picsum.photos/id/${Math.floor(Math.random()*100)+1}/300/300" alt="${product.name}">
+                </div>
+                <div class="card-content">
+                    <h3>${product.name}</h3>
+                    <p class="price">${product.price} ₫</p>
+                    <button class="btn-buy">Mua ngay</button>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        // Fade-in on scroll
+        const fadeElements = document.querySelectorAll('.fade-box');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

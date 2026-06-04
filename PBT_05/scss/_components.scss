@@ -1,0 +1,99 @@
+/* 
+    COMPONENTS 
+    NgThuyTrang
+*/
+@use 'variables' as *;
+@use 'mixins' as *;
+.header {
+    background: $mau-trang;
+    box-shadow: $shadow-nhe;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    .header-content {
+        @include flex-giua;
+        padding: $space-vua 0;
+    }
+
+    .logo h2 {
+        color: $mau-chinh;
+    }
+
+    nav a {
+        margin: 0 10px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.8rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.product-card {
+    @include card-style;
+    transition: all 0.3s ease;
+
+    img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .info {
+        padding: $space-vua;
+    }
+
+    .price {
+        color: $mau-do;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .btn-add {
+        width: 100%;
+        padding: 12px;
+        background: $mau-chinh;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        margin-top: $space-nho;
+        cursor: pointer;
+
+        &:hover {
+            background: #0055aa;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+}
+
+.sidebar {
+    background: $mau-trang;
+    padding: $space-lon;
+    border-radius: $bo-goc;
+    box-shadow: $shadow-nhe;
+    margin-bottom: $space-lon;
+}
+
+.section-title {
+    text-align: center;
+    margin: $space-lon 0;
+    font-size: 1.9rem;
+}
+
+footer {
+    background: $mau-den;
+    color: white;
+    text-align: center;
+    padding: $space-rat-lon 0;
+    margin-top: $space-rat-lon;
+}

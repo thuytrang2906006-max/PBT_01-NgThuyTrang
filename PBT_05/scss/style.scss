@@ -1,0 +1,83 @@
+/* 
+    STYLE.SCSS - MAIN FILE
+    Sinh viên: NgThuyTrang
+    Đồ án Responsive + SCSS
+*/
+
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'components';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-chinh;
+    background-color: $mau-nen;
+    color: #333;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-lon;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@include responsive(tablet) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: $space-lon;
+    }
+}
+
+@include responsive(desktop) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    main {
+        grid-template-columns: 250px 1fr 220px;
+        gap: $space-lon;
+    }
+}
+
+/* Mobile menu */
+@media (max-width: 767px) {
+    nav {
+        display: none;
+        width: 100%;
+        margin-top: $space-vua;
+
+        &.active {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Title responsive */
+@media (min-width: $tablet) {
+    .section-title {
+        font-size: 2.3rem;
+    }
+}
