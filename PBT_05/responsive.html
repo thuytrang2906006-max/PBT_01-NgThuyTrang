@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Cửa hàng công nghệ</title>
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header">
+                <div class="logo">
+                    <h2>TechStore</h2>
+                </div>
+
+                <nav id="main-nav">
+                    <a href="#">Trang chủ</a>
+                    <a href="#">Sản phẩm</a>
+                    <a href="#">Điện thoại</a>
+                    <a href="#">Laptop</a>
+                    <a href="#">Phụ kiện</a>
+                </nav>
+
+                <div class="header-right">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                    <button id="hamburger-btn" class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Bộ lọc -->
+        <aside class="sidebar" id="sidebar">
+            <h3>Bộ lọc</h3>
+            
+            <div class="filter">
+                <h4>Thương hiệu</h4>
+                <label><input type="checkbox" checked> Apple</label>
+                <label><input type="checkbox" checked> Samsung</label>
+                <label><input type="checkbox"> Xiaomi</label>
+                <label><input type="checkbox"> OPPO</label>
+            </div>
+
+            <div class="filter">
+                <h4>Mức giá</h4>
+                <input type="range" min="1000000" max="50000000" value="25000000" id="priceRange">
+                <p id="priceShow">1 - 50 triệu</p>
+            </div>
+        </aside>
+
+        <!-- Sản phẩm -->
+        <section class="products">
+            <h1 class="section-title">Sản phẩm nổi bật</h1>
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <!-- Quảng cáo -->
+        <aside class="ads">
+            <div class="ad-box">
+                <h4>Ưu đãi đặc biệt</h4>
+                <p>Giảm đến 35% Tai nghe</p>
+                <button class="btn-ad">Xem ngay</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 TechStore</p>
+            <p>Đồ án Responsive Web - Made by NgThuyTrang</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu - NgThuyTrang
+        const hamburger = document.getElementById('hamburger-btn');
+        const nav = document.getElementById('main-nav');
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Danh sách sản phẩm
+        const products = [
+            {name: "iPhone 16 Pro Max", price: "32.990.000", img: "https://picsum.photos/id/20/300/300"},
+            {name: "MacBook Air M3", price: "29.990.000", img: "https://picsum.photos/id/201/300/300"},
+            {name: "Samsung Galaxy S25", price: "24.500.000", img: "https://picsum.photos/id/251/300/300"},
+            {name: "AirPods Pro 2", price: "6.290.000", img: "https://picsum.photos/id/180/300/300"},
+            {name: "iPad Air 6", price: "16.990.000", img: "https://picsum.photos/id/60/300/300"},
+            {name: "Sony WH-1000XM5", price: "8.490.000", img: "https://picsum.photos/id/201/300/300"},
+            {name: "Xiaomi 14T", price: "11.990.000", img: "https://picsum.photos/id/133/300/300"},
+            {name: "Dell XPS 13 Plus", price: "37.500.000", img: "https://picsum.photos/id/201/300/300"}
+        ];
+
+        // Hiển thị sản phẩm
+        const grid = document.getElementById('productGrid');
+        
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.classList.add('product-card');
+            card.innerHTML = `
+                <img src="${product.img}" alt="${product.name}">
+                <div class="info">
+                    <h3>${product.name}</h3>
+                    <p class="price">${product.price} ₫</p>
+                    <button class="btn-add">Thêm vào giỏ hàng</button>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
