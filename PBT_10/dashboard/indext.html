@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 Multi-API Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>📊 Multi-API Dashboard</h1>
+            <p>Tổng hợp dữ liệu từ nhiều API khác nhau</p>
+            
+            <!-- Thông tin fetch -->
+            <div class="fetch-info">
+                <span id="fetchTime">⏱️ Chưa load</span>
+                <button id="refreshBtn" class="btn-refresh">🔄 Refresh All</button>
+            </div>
+        </header>
+
+        <!-- LOADING TỔNG THỂ -->
+        <div id="globalLoading" class="global-loading">
+            <div class="spinner"></div>
+            <p>⏳ Đang tải dữ liệu từ các API...</p>
+        </div>
+
+        <!-- DASHBOARD GRID - 3 widgets -->
+        <div id="dashboard" class="dashboard hidden">
+            
+            <!-- WIDGET 1: WEATHER -->
+            <div class="widget" id="weatherWidget">
+                <div class="widget-header">
+                    <h2>🌤️ Thời tiết Hà Nội</h2>
+                    <span class="widget-status" id="weatherStatus">●</span>
+                </div>
+                <div class="widget-body" id="weatherBody">
+                    <div class="widget-loading">
+                        <div class="spinner-small"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WIDGET 2: RANDOM USERS -->
+            <div class="widget" id="usersWidget">
+                <div class="widget-header">
+                    <h2>👥 Random Users</h2>
+                    <span class="widget-status" id="usersStatus">●</span>
+                </div>
+                <div class="widget-body" id="usersBody">
+                    <div class="widget-loading">
+                        <div class="spinner-small"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WIDGET 3: RANDOM DOGS -->
+            <div class="widget" id="dogsWidget">
+                <div class="widget-header">
+                    <h2>🐕 Random Dogs</h2>
+                    <span class="widget-status" id="dogsStatus">●</span>
+                </div>
+                <div class="widget-body" id="dogsBody">
+                    <div class="widget-loading">
+                        <div class="spinner-small"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WIDGET 4: POSTS (từ JSONPlaceholder) -->
+            <div class="widget" id="postsWidget">
+                <div class="widget-header">
+                    <h2>📝 Latest Posts</h2>
+                    <span class="widget-status" id="postsStatus">●</span>
+                </div>
+                <div class="widget-body" id="postsBody">
+                    <div class="widget-loading">
+                        <div class="spinner-small"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

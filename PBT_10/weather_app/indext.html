@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤️ Weather App - Ứng dụng Thời tiết</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- PHẦN HEADER -->
+        <header>
+            <h1>🌤️ Weather App</h1>
+            <p>Tra cứu thời tiết theo thành phố</p>
+        </header>
+
+        <!-- PHẦN TÌM KIẾM -->
+        <div class="search-box">
+            <!-- Input nhập tên thành phố -->
+            <input 
+                type="text" 
+                id="cityInput" 
+                placeholder="Nhập tên thành phố (VD: Hanoi, Tokyo, Paris...)"
+            >
+            <!-- Nút tìm kiếm -->
+            <button id="searchBtn">🔍 Tìm</button>
+        </div>
+
+        <!-- PHẦN HIỂN THỊ THỜI TIẾT -->
+        <!-- Có 3 trạng thái: loading, success (weather-card), error -->
+        
+        <!-- 1. LOADING STATE - Hiện khi đang gọi API -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>⏳ Đang tải dữ liệu...</p>
+        </div>
+
+        <!-- 2. ERROR STATE - Hiện khi có lỗi -->
+        <div id="error" class="error hidden">
+            <span class="error-icon">❌</span>
+            <p id="errorMessage">Có lỗi xảy ra</p>
+        </div>
+
+        <!-- 3. SUCCESS STATE - Hiện thông tin thời tiết -->
+        <div id="weatherCard" class="weather-card hidden">
+            <div class="weather-header">
+                <h2 id="cityName">Tên thành phố</h2>
+                <p id="weatherDate">Ngày giờ</p>
+            </div>
+            
+            <div class="weather-body">
+                <!-- Icon thời tiết -->
+                <div class="weather-icon" id="weatherIcon">☀️</div>
+                
+                <!-- Nhiệt độ -->
+                <div class="temperature">
+                    <span id="temp">--</span>°C
+                </div>
+                
+                <!-- Mô tả thời tiết -->
+                <p class="weather-desc" id="weatherDesc">Mô tả thời tiết</p>
+            </div>
+
+            <div class="weather-details">
+                <!-- Độ ẩm -->
+                <div class="detail-item">
+                    <span class="detail-icon">💧</span>
+                    <span class="detail-label">Độ ẩm</span>
+                    <span class="detail-value" id="humidity">--%</span>
+                </div>
+                
+                <!-- Tốc độ gió -->
+                <div class="detail-item">
+                    <span class="detail-icon">💨</span>
+                    <span class="detail-label">Gió</span>
+                    <span class="detail-value" id="wind">-- km/h</span>
+                </div>
+                
+                <!-- Cảm giác như -->
+                <div class="detail-item">
+                    <span class="detail-icon">🌡️</span>
+                    <span class="detail-label">Cảm giác</span>
+                    <span class="detail-value" id="feelsLike">--°C</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHẦN LỊCH SỬ TÌM KIẾM -->
+        <div class="history-section">
+            <h3>📋 Lịch sử tìm kiếm</h3>
+            <div id="historyList" class="history-list">
+                <!-- Các nút lịch sử sẽ được thêm bằng JavaScript-->
+                <p class="no-history">Chưa có lịch sử tìm kiếm</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

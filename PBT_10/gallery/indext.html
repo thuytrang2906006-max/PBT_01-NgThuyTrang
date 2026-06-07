@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🖼️ Photo Gallery - Infinite Scroll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>🖼️ Photo Gallery</h1>
+            <p>Cuộn xuống để xem thêm ảnh (Infinite Scroll)</p>
+        </header>
+
+        <!-- GALLERY GRID -->
+        <div id="gallery" class="gallery">
+            <!-- Các ảnh sẽ được thêm bằng JavaScript -->
+        </div>
+
+        <!-- LOADING INDICATOR -->
+        <div id="loadingMore" class="loading-more hidden">
+            <div class="spinner"></div>
+            <p>⏳ Đang tải thêm ảnh...</p>
+        </div>
+
+        <!-- TRIGGER ELEMENT cho IntersectionObserver -->
+        <!-- Khi element này xuất hiện trong viewport → load thêm ảnh -->
+        <div id="loadTrigger" class="load-trigger"></div>
+
+        <!-- THÔNG BÁO HẾT ẢNH -->
+        <div id="endMessage" class="end-message hidden">
+            <p>🎉 Bạn đã xem hết tất cả ảnh!</p>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX MODAL - Hiển thị ảnh lớn khi click -->
+    <div id="lightbox" class="lightbox hidden">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img id="lightboxImage" src="" alt="Full size image">
+        <div class="lightbox-info">
+            <p id="lightboxTitle">Tiêu đề ảnh</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

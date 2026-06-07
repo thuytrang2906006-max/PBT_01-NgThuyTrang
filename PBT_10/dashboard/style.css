@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0f0f1e;
+    color: white;
+    min-height: 100vh;
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+header p {
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Fetch info bar */
+.fetch-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fetch-info span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #00d4ff;
+}
+
+/* Refresh button */
+.btn-refresh {
+    background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-refresh:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+}
+
+/* ---------- GLOBAL LOADING ---------- */
+.global-loading {
+    text-align: center;
+    padding: 60px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #00d4ff;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.global-loading p {
+    color: #888;
+    font-size: 16px;
+}
+
+/* ---------- HIDDEN CLASS ---------- */
+.hidden {
+    display: none !important;
+}
+
+/* ---------- DASHBOARD GRID ---------- */
+.dashboard {
+    display: grid;
+    /* 2 cột trên desktop */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Tablet: 1 cột */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- WIDGET ---------- */
+.widget {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Widget header */
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.widget-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Status indicator */
+.widget-status {
+    font-size: 12px;
+}
+
+.widget-status.loading {
+    color: #ffc107;
+    animation: pulse 1s infinite;
+}
+
+.widget-status.success {
+    color: #4CAF50;
+}
+
+.widget-status.error {
+    color: #dc3545;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Widget body */
+.widget-body {
+    padding: 20px;
+    min-height: 200px;
+}
+
+/* Widget loading */
+.widget-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+}
+
+.spinner-small {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #00d4ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Widget error */
+.widget-error {
+    text-align: center;
+    color: #dc3545;
+    padding: 30px;
+}
+
+.widget-error .error-icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ---------- WEATHER WIDGET CONTENT ---------- */
+.weather-content {
+    text-align: center;
+}
+
+.weather-icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.weather-temp {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.weather-desc {
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.weather-detail {
+    text-align: center;
+}
+
+.weather-detail .label {
+    font-size: 12px;
+    color: #888;
+    display: block;
+}
+
+.weather-detail .value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #00d4ff;
+}
+
+/* ---------- USERS WIDGET CONTENT ---------- */
+.users-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00d4ff;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.user-email {
+    font-size: 12px;
+    color: #888;
+}
+
+/* ---------- DOGS WIDGET CONTENT ---------- */
+.dogs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.dog-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.dog-image:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- POSTS WIDGET CONTENT ---------- */
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.post-item {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 3px solid #7b2ff7;
+}
+
+.post-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #00d4ff;
+    
+    /* Giới hạn 2 dòng */
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-body {
+    font-size: 12px;
+    color: #888;
+    
+    /* Giới hạn 2 dòng */
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
