@@ -175,3 +175,248 @@ Cần bước gì để chuyển SCSS → CSS?
 ## Phần B
 ### Câu B3:
 Lệnh biên dịch SCSS:  npx sass scss/style.scss css/style.css --watch
+
+## Phần C
+### Câu C1:
+1: Mobile (375px)
+   - Navigation thay đổi thế nào? (hamburger? dropdown?)
+       Thanh tìm kiếm vẫn được giữ ở phía trên vì đây là chức năng chính. Các mục như Kênh Người Bán, Tải ứng dụng, Hỗ trợ, Đăng nhập/Đăng ký thường bị ẩn hoặc thu gọn. Giao diện không hiện nhiều menu như desktop.
+   - Lưới content thay đổi mấy cột?
+       Sản phẩm thường hiển thị khoảng 2 cột trên một hàng.
+   - Elements nào bị ẩn trên mobile?
+       Các menu phụ ở header, banner lớn, một số danh mục phụ và phần thông tin chi tiết bị ẩn để tiết kiệm diện tích.
+   - Font size có thay đổi không?
+       Font chữ nhỏ hơn desktop, khoảng cách giữa các phần tử cũng hẹp hơn.
+2: Tablet (768px)
+   - Navigation thay đổi thế nào? (hamburger? dropdown?)
+       Thanh tìm kiếm dài hơn. Một số icon hoặc menu có thể xuất hiện rõ hơn, nhưng vẫn chưa đầy đủ như desktop.
+   - Lưới content thay đổi mấy cột?
+       Sản phẩm thường hiển thị khoảng 3–4 cột trên một hàng.
+   - Elements nào bị ẩn trên mobile?
+       Một số menu phụ vẫn bị ẩn hoặc rút gọn, nhưng banner và danh mục hiển thị rõ hơn mobile.
+   - Font size có thay đổi không?
+       Font chữ lớn hơn mobile một chút, dễ đọc hơn
+
+3: Desktop (1440px)
+   - Navigation thay đổi thế nào? (hamburger? dropdown?)
+       Header hiển thị nhiều mục như Kênh Người Bán, Tải ứng dụng, Kết nối, Thông báo, Hỗ trợ, Đăng ký, Đăng nhập. Thanh tìm kiếm rộng và dễ thao tác.
+   - Lưới content thay đổi mấy cột?
+       Sản phẩm thường hiển thị khoảng 5–6 cột trên một hàng.
+   - Elements nào bị ẩn trên mobile?
+       Hầu như không bị ẩn nhiều. Các banner, danh mục, menu phụ và thông tin sản phẩm được hiển thị đầy đủ hơn.
+   - Font size có thay đổi không?
+       Font chữ lớn hơn mobile, khoảng cách giữa các thành phần rộng và thoáng hơn.
+
+### Câu C2:
+1. Wireframe Mobile — 375px
+Ở mobile, giao diện nên xếp 1 cột để dễ đọc và dễ thao tác.
+┌────────────────────────┐
+│ Logo        ☎ Đặt bàn  │
+├────────────────────────┤
+│      HERO IMAGE        │
+│  Ảnh món ăn / nhà hàng │
+├────────────────────────┤
+│      FORM ĐẶT BÀN      │
+│  Ngày                  │
+│  Giờ                   │
+│  Số người              │
+│  Ghi chú               │
+│  [Đặt bàn]             │
+├────────────────────────┤
+│      GRID ẢNH MÓN ĂN   │
+│   Ảnh 1                │
+│   Ảnh 2                │
+│   Ảnh 3                │
+│   Ảnh 4                │
+│   Ảnh 5                │
+│   Ảnh 6                │
+├────────────────────────┤
+│      GOOGLE MAPS       │
+├────────────────────────┤
+│        FOOTER          │
+└────────────────────────┘
+Mobile: 
+   Form đặt bàn nằm ngay sau hero để người dùng đặt bàn nhanh.
+   Grid ảnh món ăn hiển thị 1 cột.
+   Các menu phụ hoặc thông tin dài có thể bị ẩn.
+   Không dùng sidebar vì màn hình nhỏ.
+2. Wireframe Tablet — 768px
+Ở tablet, giao diện rộng hơn nên có thể chia ảnh thành nhiều cột.
+┌────────────────────────────────┐
+│ Logo              ☎ Đặt bàn    │
+├────────────────────────────────┤
+│          HERO IMAGE            │
+├────────────────────────────────┤
+│          FORM ĐẶT BÀN          │
+├───────────────┬────────────────┤
+│    Ảnh 1      │     Ảnh 2      │
+├───────────────┼────────────────┤
+│    Ảnh 3      │     Ảnh 4      │
+├───────────────┼────────────────┤
+│    Ảnh 5      │     Ảnh 6      │
+├────────────────────────────────┤
+│          GOOGLE MAPS           │
+├────────────────────────────────┤
+│             FOOTER             │
+└────────────────────────────────┘
+Tablet:
+  Grid ảnh món ăn hiển thị 2 cột.
+  Form vẫn nằm phía trên phần ảnh để người dùng dễ thấy.
+  Bản đồ nằm dưới grid ảnh, chiếm full width.
+  Không cần sidebar riêng.
+3. Wireframe Desktop — 1440px
+   Ở desktop, có thể chia layout thành 2 cột chính.
+   ┌──────────────────────────────────────────────┐
+│ Logo                         ☎ 0123 456 789 │
+├──────────────────────────────────────────────┤
+│                 HERO IMAGE                   │
+├──────────────────────────────┬───────────────┤
+│        GRID ẢNH MÓN ĂN        │ FORM ĐẶT BÀN │
+│ ┌──────┬──────┬──────┐       │ Ngày          │
+│ │Ảnh 1 │Ảnh 2 │Ảnh 3 │       │ Giờ           │
+│ ├──────┼──────┼──────┤       │ Số người      │
+│ │Ảnh 4 │Ảnh 5 │Ảnh 6 │       │ Ghi chú       │
+│ └──────┴──────┴──────┘       │ [Đặt bàn]     │
+├──────────────────────────────┴───────────────┤
+│                  GOOGLE MAPS                 │
+├──────────────────────────────────────────────┤
+│                    FOOTER                    │
+└──────────────────────────────────────────────┘
+
+Desktop:
+  Layout dùng 2 cột: bên trái là grid ảnh, bên phải là form đặt bàn.
+  Grid ảnh món ăn hiển thị 3 cột.
+  Form đóng vai trò như sidebar bên phải.
+  Google Maps nằm dưới phần nội dung chính, chiếm toàn bộ chiều ngang.
+
+CSS Skeleton Mobile-First
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Mobile first */
+.page {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.hero {
+    min-height: 300px;
+    background: #ddd;
+}
+
+.booking-form {
+    padding: 20px;
+    background: #f8f8f8;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+.food-item {
+    min-height: 160px;
+    background: #ddd;
+}
+
+.map {
+    min-height: 300px;
+    background: #ccc;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #222;
+    color: white;
+}
+
+/* Tablet >= 768px */
+@media (min-width: 768px) {
+    .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+}
+
+/* Desktop >= 1024px */
+@media (min-width: 1024px) {
+    .main-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .food-grid {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+    }
+
+    .booking-form {
+        align-self: start;
+    }
+
+    .map {
+        margin: 0 30px;
+    }
+}
+
+/* Desktop lớn >= 1440px */
+@media (min-width: 1440px) {
+    .page {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+}
+```
+HTML tương ứng
+```html
+<div class="page">
+    <header class="header">Logo + Điện thoại</header>
+    <section class="hero">Hero Image</section>
+
+    <main class="main-layout">
+        <section class="food-grid">
+            <div class="food-item">Ảnh 1</div>
+            <div class="food-item">Ảnh 2</div>
+            <div class="food-item">Ảnh 3</div>
+            <div class="food-item">Ảnh 4</div>
+            <div class="food-item">Ảnh 5</div>
+            <div class="food-item">Ảnh 6</div>
+        </section>
+
+        <form class="booking-form">
+            Form đặt bàn
+        </form>
+    </main>
+
+    <section class="map">Google Maps</section>
+    <footer class="footer">Footer</footer>
+</div>
+```
